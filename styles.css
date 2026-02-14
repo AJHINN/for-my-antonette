@@ -1,0 +1,139 @@
+/* ===== ULTRA ROMANTIC MODERN DESIGN ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* animated gradient */
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 800% 800%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* floating blurred lights */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.3);
+  filter: blur(120px);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+body::before {
+  top: 10%;
+  left: 10%;
+}
+
+body::after {
+  bottom: 10%;
+  right: 10%;
+}
+
+/* ===== GLASS CARD ===== */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 45px 55px;
+  border-radius: 25px;
+  width: 380px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* title */
+h1 {
+  font-size: 2.4em;
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  margin-top: 25px;
+}
+
+/* YES button */
+.yes-button {
+  font-size: 1.2em;
+  padding: 14px 32px;
+  margin-right: 10px;
+  background: linear-gradient(135deg, #00c853, #69f0ae);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,200,83,0.4);
+}
+
+.yes-button:hover {
+  transform: scale(1.15) rotate(-2deg);
+  box-shadow: 0 15px 35px rgba(0,200,83,0.6);
+}
+
+/* NO button */
+.no-button {
+  font-size: 1.2em;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #ff1744, #ff8a80);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(255,23,68,0.4);
+}
+
+.no-button:hover {
+  transform: scale(1.15) rotate(2deg);
+  box-shadow: 0 15px 35px rgba(255,23,68,0.6);
+}
+
+/* ===== GIF ===== */
+.gif_container img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
